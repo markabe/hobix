@@ -1,0 +1,23 @@
+--- 
+title: hobix&you!!
+tagline: nice, nice, very nice
+link: http://crnixon.github.com/hobix/
+period: 00:60:00
+created: 
+issued: 
+modified: 
+authors: 
+  crn: &id001 
+    name: CRN
+    url: http://crnixon.org
+    email: crnixon@gmail.com
+contributors: 
+entries: 
+- !^entry 
+  title: This Ghostly Message From the Slime Will Soon Vanish!
+  created: 2009-08-21 11:57:55.526052 -04:00
+  modified: 2009-08-21 11:57:55.526053 -04:00
+  updated: 2009-08-21 11:57:55.526054 -04:00
+  author: *id001
+  content: !str:RedCloth::TextileDoc Welcome to Hobix!  Once you make your first blog post, this entry will disappear.  However, in the meantime, you can tweak the CSS of your blog until it suits your satisfaction and you have this bit of words to act as a place holder.
+  tagline: A temporary message, a tingling sensation, Hobix is up!!

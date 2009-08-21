@@ -1,0 +1,22 @@
+--- !hobix.com,2004/weblog 
+title: hobix&you!!
+link: http://crnixon.github.com/hobix/
+tagline: nice, nice, very nice
+period: 00:60:00
+authors: 
+  crn: 
+    name: CRN
+    url: http://crnixon.org
+    email: crnixon@gmail.com
+linklist: 
+- hobix: http://crnixon.github.com/hobix/
+- del.icio.us: http://del.icio.us/
+sections: {}
+
+requires: 
+- hobix/storage/filesys
+- hobix/out/quick
+- hobix/out/erb
+- hobix/out/rss
+- hobix/out/okaynews
+- hobix/out/atom
