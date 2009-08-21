@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Hobix::Entry [The Book of Hobix]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Hobix::Entry</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+
+
+                <a href="../../files/lib/hobix/entry_rb.html">
+
+                lib/hobix/entry.rb
+
+                </a>
+
+
+        <br />
+
+            </td>
+        </tr>
+
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+
+                <a href="BaseEntry.html">
+
+                Hobix::BaseEntry
+
+               </a>
+
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+The <a href="Entry.html">Entry</a> class stores complete data for an entry
+on the site. All entry extensions should behave like this class as well.
+</p>
+<h2>Properties</h2>
+<p>
+At the very least, entry data should support the following accessors.
+</p>
+<table>
+<tr><td valign="top">id:</td><td>The id (or shortName) for this entry. Includes the basic entry path.
+
+</td></tr>
+<tr><td valign="top">link:</td><td>The full URL to this entry from the weblog.
+
+</td></tr>
+<tr><td valign="top">title:</td><td>The heading for this entry.
+
+</td></tr>
+<tr><td valign="top">tagline:</td><td>The subheading for this entry.
+
+</td></tr>
+<tr><td valign="top">tags:</td><td>A list of free-tagged categories.
+
+</td></tr>
+<tr><td valign="top">author:</td><td>The author&#8217;s username.
+
+</td></tr>
+<tr><td valign="top">contributors:</td><td>An Array of contributors&#8217; usernames.
+
+</td></tr>
+<tr><td valign="top">created:</td><td>The time the <a href="Entry.html">Entry</a> was initially created.
+
+</td></tr>
+<tr><td valign="top">modified:</td><td>A modification time.
+
+</td></tr>
+<tr><td valign="top">updated:</td><td>Used internally to ensure an entry has been generated.
+
+</td></tr>
+<tr><td valign="top">summary:</td><td>A brief description of this entry. Can be used for an abbreviated text of a
+long article.
+
+</td></tr>
+<tr><td valign="top">content:</td><td>The full text of the entry.
+
+</td></tr>
+</table>
+<p>
+The following read-only properties are also available:
+</p>
+<table>
+<tr><td valign="top">day_id:</td><td>The day ID can act as a path where other entry, posted on the same day, are
+stored.
+
+</td></tr>
+<tr><td valign="top">month_id:</td><td>A path for the month&#8217;s entries.
+
+</td></tr>
+<tr><td valign="top">year_id:</td><td>A path for the year&#8217;s entries.
+
+</td></tr>
+</table>
+
+    </div>
+
+   </div>
+
+
+  </div>
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+    <!-- if method_list -->
+
+
+
+
+  </div>
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Hobix::BixWik [The Book of Hobix]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Hobix::BixWik</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+
+
+                <a href="../../files/lib/hobix/bixwik_rb.html">
+
+                lib/hobix/bixwik.rb
+
+                </a>
+
+
+        <br />
+
+            </td>
+        </tr>
+
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+  <div id="contextContent">
+
+   </div>
+
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+
+        <a href="#M000018">abs_link</a>&nbsp;&nbsp;
+
+        <a href="#M000012">default_entry_class</a>&nbsp;&nbsp;
+
+        <a href="#M000013">default_index_class</a>&nbsp;&nbsp;
+
+        <a href="#M000014">skel_index</a>&nbsp;&nbsp;
+
+        <a href="#M000017">skel_list_index</a>&nbsp;&nbsp;
+
+        <a href="#M000016">skel_recent_index</a>&nbsp;&nbsp;
+
+        <a href="#M000015">skel_recent_index</a>&nbsp;&nbsp;
+
+        <a href="#M000020">wiki_link</a>&nbsp;&nbsp;
+
+        <a href="#M000019">wiki_page</a>&nbsp;&nbsp;
+
+        <a href="#M000021">wiki_word</a>&nbsp;&nbsp;
+
+      </div>
+    </div>
+
+  </div>
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="BixWik/Entry.html" class="link">Hobix::BixWik::Entry</a><br />
+Class <a href="BixWik/IndexEntry.html" class="link">Hobix::BixWik::IndexEntry</a><br />
+Class <a href="BixWik/WikiRedCloth.html" class="link">Hobix::BixWik::WikiRedCloth</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">QUICK_MENU</td>
+          <td>=</td>
+          <td class="context-item-value">YAML::load &lt;&lt;-END         --- %YAML:1.0 !omap         - HomePage: [Home Page, H, Start Over]         - list/index: [All Pages, A, Alphabetically sorted list of pages]         - recent/index: [Recently Revised, U, Pages sorted by when they were last changed]         - authors/index: [Authors, ~, Who wrote what]         - FeedList: [Feed List, ~, Subscribe to changes by RSS]     END</td>
+
+        </tr>
+
+        </table>
+      </div>
+    </div>
+
+
+
+
+    <!-- if method_list -->
+
+    <div id="methods">
+
+      <h3 class="section-bar">Public Class methods</h3>
+
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000021" class="method-signature">
+
+          <span class="method-name">wiki_word</span><span class="method-args">( id )</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000021-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 106</span>
+106:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">wiki_word</span>( <span class="ruby-identifier">id</span> )
+107:         <span class="ruby-constant">Hobix</span><span class="ruby-operator">::</span><span class="ruby-constant">BixWik</span><span class="ruby-operator">::</span><span class="ruby-constant">QUICK_MENU</span>[ <span class="ruby-identifier">id</span> ].<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">id</span>.<span class="ruby-identifier">gsub</span>( <span class="ruby-regexp re">/^\w|_\w|[A-Z]/</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">up</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot; #{up[-1, 1].upcase}&quot;</span> }.<span class="ruby-identifier">strip</span>
+108:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+
+      <div id="method-M000018" class="method-detail">
+        <a name="M000018"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000018" class="method-signature">
+
+          <span class="method-name">abs_link</span><span class="method-args">( word )</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000018-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000018-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 89</span>
+89:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">abs_link</span>( <span class="ruby-identifier">word</span> )
+90:         <span class="ruby-identifier">output_entry_map</span>[<span class="ruby-identifier">word</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">output_entry_map</span>[<span class="ruby-identifier">word</span>][<span class="ruby-identifier">:page</span>].<span class="ruby-identifier">link</span>
+91:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000012" class="method-detail">
+        <a name="M000012"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000012" class="method-signature">
+
+          <span class="method-name">default_entry_class</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000012-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000012-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 41</span>
+41:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_entry_class</span>; <span class="ruby-value str">&quot;Hobix::BixWik::Entry&quot;</span>; <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000013" class="method-signature">
+
+          <span class="method-name">default_index_class</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000013-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000013-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 42</span>
+42:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_index_class</span>; <span class="ruby-value str">&quot;Hobix::BixWik::IndexEntry&quot;</span>; <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000014" class="method-detail">
+        <a name="M000014"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000014" class="method-signature">
+
+          <span class="method-name">skel_index</span><span class="method-args">( path_storage, section_path ) {|:page =&gt; page, :entry =&gt; homePage| ...}</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Handler for templates with `index&#8217; prefix. These pages simply mirror
+the `HomePage&#8217; entry.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000014-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000014-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 46</span>
+46:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">skel_index</span>( <span class="ruby-identifier">path_storage</span>, <span class="ruby-identifier">section_path</span> )
+47:         <span class="ruby-identifier">homePage</span> = <span class="ruby-identifier">path_storage</span>.<span class="ruby-identifier">match</span>( <span class="ruby-regexp re">/^HomePage$/</span> ).<span class="ruby-identifier">first</span>
+48:         <span class="ruby-identifier">page</span> = <span class="ruby-constant">Page</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value str">'index'</span> )
+49:         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">homePage</span>
+50:             <span class="ruby-identifier">homePage</span> = <span class="ruby-constant">Hobix</span><span class="ruby-operator">::</span><span class="ruby-constant">Storage</span><span class="ruby-operator">::</span><span class="ruby-constant">IndexEntry</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">path_storage</span>.<span class="ruby-identifier">default_entry</span>( <span class="ruby-identifier">authors</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">first</span> ) )
+51:         <span class="ruby-keyword kw">end</span>
+52:         <span class="ruby-identifier">page</span>.<span class="ruby-identifier">timestamp</span> = <span class="ruby-identifier">homePage</span>.<span class="ruby-identifier">created</span>
+53:         <span class="ruby-identifier">page</span>.<span class="ruby-identifier">updated</span> = <span class="ruby-identifier">homePage</span>.<span class="ruby-identifier">created</span>
+54:         <span class="ruby-keyword kw">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>, <span class="ruby-identifier">:entry</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">homePage</span>
+55:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000017" class="method-detail">
+        <a name="M000017"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000017" class="method-signature">
+
+          <span class="method-name">skel_list_index</span><span class="method-args">( path_storage, section_path ) {|:page =&gt; page, :entries =&gt; all_pages, :no_load =&gt; true| ...}</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Handler for templates with `list/index&#8217; prefix. These templates will
+receive a list of all pages in the Wiki.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000017-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000017-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 81</span>
+81:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">skel_list_index</span>( <span class="ruby-identifier">path_storage</span>, <span class="ruby-identifier">section_path</span> )
+82:         <span class="ruby-identifier">all_pages</span> = <span class="ruby-identifier">storage</span>.<span class="ruby-identifier">all</span>
+83:         <span class="ruby-identifier">page</span> = <span class="ruby-constant">Page</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value str">'list/index'</span> )
+84:         <span class="ruby-identifier">page</span>.<span class="ruby-identifier">timestamp</span> = <span class="ruby-identifier">all_pages</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">created</span>
+85:         <span class="ruby-identifier">page</span>.<span class="ruby-identifier">updated</span> = <span class="ruby-identifier">storage</span>.<span class="ruby-identifier">last_updated</span>( <span class="ruby-identifier">all_pages</span> )
+86:         <span class="ruby-keyword kw">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>, <span class="ruby-identifier">:entries</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">all_pages</span>, <span class="ruby-identifier">:no_load</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>
+87:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000016" class="method-signature">
+
+          <span class="method-name">skel_recent_index</span><span class="method-args">( path_storage, section_path ) {|:page =&gt; page, :entries =&gt; index_entries| ...}</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Handler for templates with `recent/index&#8217; prefix. These templates
+will receive entries loaded by +<a
+href="BaseStorage.html#M000116">Hobix::BaseStorage#lastn</a>+. Only one
+index page is requested by this handler.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000016-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000016-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 71</span>
+71:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">skel_recent_index</span>( <span class="ruby-identifier">path_storage</span>, <span class="ruby-identifier">section_path</span> )
+72:         <span class="ruby-identifier">index_entries</span> = <span class="ruby-identifier">storage</span>.<span class="ruby-identifier">lastn</span>( <span class="ruby-ivar">@lastn</span> <span class="ruby-operator">||</span> <span class="ruby-value">120</span> )
+73:         <span class="ruby-identifier">page</span> = <span class="ruby-constant">Page</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value str">'recent/index'</span> )
+74:         <span class="ruby-identifier">page</span>.<span class="ruby-identifier">timestamp</span> = <span class="ruby-identifier">index_entries</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">created</span>
+75:         <span class="ruby-identifier">page</span>.<span class="ruby-identifier">updated</span> = <span class="ruby-identifier">storage</span>.<span class="ruby-identifier">last_updated</span>( <span class="ruby-identifier">index_entries</span> )
+76:         <span class="ruby-keyword kw">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>, <span class="ruby-identifier">:entries</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">index_entries</span>
+77:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000015" class="method-signature">
+
+          <span class="method-name">skel_recent_index</span><span class="method-args">( path_storage, section_path ) {|:page =&gt; page, :entries =&gt; index_entries| ...}</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Handler for templates with `list/index&#8217; prefix. These templates will
+receive <a href="BixWik/IndexEntry.html">IndexEntry</a> objects for every
+entry in the system. Only one index page is requested by this handler.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000015-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000015-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 60</span>
+60:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">skel_recent_index</span>( <span class="ruby-identifier">path_storage</span>, <span class="ruby-identifier">section_path</span> )
+61:         <span class="ruby-identifier">index_entries</span> = <span class="ruby-identifier">storage</span>.<span class="ruby-identifier">find</span>( <span class="ruby-identifier">:all</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span> )
+62:         <span class="ruby-identifier">page</span> = <span class="ruby-constant">Page</span>.<span class="ruby-identifier">new</span>( <span class="ruby-value str">'list/index'</span> )
+63:         <span class="ruby-identifier">page</span>.<span class="ruby-identifier">timestamp</span> = <span class="ruby-identifier">index_entries</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">created</span>
+64:         <span class="ruby-identifier">page</span>.<span class="ruby-identifier">updated</span> = <span class="ruby-identifier">storage</span>.<span class="ruby-identifier">last_updated</span>( <span class="ruby-identifier">index_entries</span> )
+65:         <span class="ruby-keyword kw">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>, <span class="ruby-identifier">:entries</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">index_entries</span>
+66:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000020" class="method-signature">
+
+          <span class="method-name">wiki_link</span><span class="method-args">( word )</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000020-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 97</span>
+ 97:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wiki_link</span>( <span class="ruby-identifier">word</span> )
+ 98:         <span class="ruby-identifier">abs_link</span> = <span class="ruby-identifier">output_entry_map</span>[<span class="ruby-identifier">word</span>]
+ 99:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">abs_link</span>
+100:             <span class="ruby-node">&quot;&lt;a class=\&quot;existingWikiWord\&quot; href=\&quot;#{ expand_path( abs_link[:page].link ) }\&quot;&gt;#{ Hobix::BixWik::wiki_word word }&lt;/a&gt;&quot;</span>
+101:         <span class="ruby-keyword kw">else</span>
+102:             <span class="ruby-node">&quot;&lt;span class=\&quot;newWikiWord\&quot;&gt;#{ Hobix::BixWik::wiki_word word }&lt;a href=\&quot;#{ expand_path( &quot;control/edit/#{ word }&quot; ) }\&quot;&gt;?&lt;/a&gt;&lt;/span&gt;&quot;</span>
+103:         <span class="ruby-keyword kw">end</span>
+104:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000019" class="method-detail">
+        <a name="M000019"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000019" class="method-signature">
+
+          <span class="method-name">wiki_page</span><span class="method-args">( src )</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000019-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000019-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 93</span>
+93:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wiki_page</span>( <span class="ruby-identifier">src</span> )
+94:         <span class="ruby-identifier">src</span>.<span class="ruby-identifier">gsub</span>( <span class="ruby-regexp re">/\b([A-Z][a-z]+[A-Z][\w\/]+)\b/</span> ) { <span class="ruby-identifier">wiki_link</span>( <span class="ruby-identifier">$1</span> ) }
+95:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+  </div>
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

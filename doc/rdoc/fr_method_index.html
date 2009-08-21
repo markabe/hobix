@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!--
+
+    Methods [The Book of Hobix]
+
+  -->
+<head>
+  <title>Methods [The Book of Hobix]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="rdoc-style.css" type="text/css" />
+  <base target="docwin" />
+</head>
+<body>
+<div class="index">
+  <h1 class="section-bar">Methods</h1>
+  <div id="index-entries">
+
+    <a href="classes/Hobix/WebApp.html#M000227"><< (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix.html#M000003">WebApp (Hobix)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000204">[] (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000205">[]= (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/BaseProperties/ClassMethods.html#M000010">_ (Hobix::BaseProperties::ClassMethods)</a><br />
+
+    <a href="classes/Hobix/BaseProperties/ClassMethods.html#M000011">_! (Hobix::BaseProperties::ClassMethods)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000247">_GET (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000248">_POST (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/BixWik.html#M000018">abs_link (Hobix::BixWik)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000267">absuri (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000246">action_uri (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000124">add_entry_class (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000250">add_header (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000056">add_weblog (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000055">add_weblog_args (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000054">add_weblog_explain (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/BaseStorage.html#M000118">after (Hobix::BaseStorage)</a><br />
+
+    <a href="classes/Hobix/BaseStorage.html#M000115">all (Hobix::BaseStorage)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000085">aorta (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/BaseProperties.html#M000007">append_features (Hobix::BaseProperties)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000172">authorize (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Out/Quick.html#M000029">banner_erb (Hobix::Out::Quick)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000181">base_id (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/BaseStorage.html#M000119">before (Hobix::BaseStorage)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000049">blogs_weblog (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000048">blogs_weblog_args (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000047">blogs_weblog_explain (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000147">build_pages (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000189">canonical_tags (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000139">central_ext (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000138">central_prefix (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000263">check_last_modified (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000252">clear_header (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000159">commit_to_git (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000042">config (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix.html#M000002">const_find (Hobix)</a><br />
+
+    <a href="classes/Hobix/LinkList.html#M000225">content (Hobix::LinkList)</a><br />
+
+    <a href="classes/Hobix/BaseEntry.html#M000198">content_ratings (Hobix::BaseEntry)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000257">content_type (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000256">content_type= (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000053">create_weblog (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000052">create_weblog_args (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000051">create_weblog_explain (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000177">day_id (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000131">default_central_ext (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000130">default_central_prefix (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/BaseStorage.html#M000114">default_entry (Hobix::BaseStorage)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000132">default_entry_class (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/BixWik.html#M000012">default_entry_class (Hobix::BixWik)</a><br />
+
+    <a href="classes/Hobix/BaseStorage.html#M000113">default_entry_id (Hobix::BaseStorage)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000126">default_entry_path (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000133">default_index_class (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/BixWik.html#M000013">default_index_class (Hobix::BixWik)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000129">default_lib_path (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000128">default_output_path (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000127">default_skel_path (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000069">del_weblog (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000068">del_weblog_args (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000067">del_weblog_explain (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000209">delete (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000210">delete_if (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Regexp.html#M000001">disable_capture (Regexp)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000072">druby_weblog (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000071">druby_weblog_args (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000070">druby_weblog_explain (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/LinkList.html#M000226">each (Hobix::LinkList)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000224">each (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/EntryEnum.html#M000097">each_day (Hobix::EntryEnum)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000255">each_header (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000212">each_pair (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000233">each_request_header (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000213">each_value (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/Enumerable.html#M000004">each_with_neighbors (Hobix::Enumerable)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000066">edit_action (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/API.html#M000109">edit_action (Hobix::API)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000065">edit_action_args (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000064">edit_action_explain (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000140">entry_class (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Out/Quick.html#M000034">entry_comment_erb (Hobix::Out::Quick)</a><br />
+
+    <a href="classes/Hobix/Out/Quick.html#M000035">entry_comment_form_erb (Hobix::Out::Quick)</a><br />
+
+    <a href="classes/Hobix/Out/Quick.html#M000031">entry_content_erb (Hobix::Out::Quick)</a><br />
+
+    <a href="classes/Hobix/Out/Quick.html#M000033">entry_footer_erb (Hobix::Out::Quick)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000134">entry_path (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Out/Quick.html#M000030">entry_title_erb (Hobix::Out::Quick)</a><br />
+
+    <a href="classes/Hobix/Out/Quick.html#M000037">entry_trackback_erb (Hobix::Out::Quick)</a><br />
+
+    <a href="classes/Hobix/Out/Quick.html#M000036">entry_trackback_rdf_erb (Hobix::Out::Quick)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000144">expand_path (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000038">extended (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000153">facet_for (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000152">facets (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000206">fetch (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000184">force_tags (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/Facets/WikiEdit.html#M000028">get (Hobix::Facets::WikiEdit)</a><br />
+
+    <a href="classes/Hobix/API.html#M000102">get (Hobix::API)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000254">get_header (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000234">get_request_header (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000039">gets (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000253">has_header? (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000215">has_value? (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000089">http (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000093">http_edit_remote (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000090">http_get (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000094">http_list_remote (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000096">http_patch_remote (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000091">http_post (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000092">http_post_remote (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000095">http_search_remote (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/Page.html#M000275">id (Hobix::Page)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000207">index (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000141">index_class (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/BasePlugin.html#M000111">inherited (Hobix::BasePlugin)</a><br />
+
+    <a href="classes/Hobix/BaseEntry.html#M000199">inherited (Hobix::BaseEntry)</a><br />
+
+    <a href="classes/Hobix/BaseStorage.html#M000117">inpath (Hobix::BaseStorage)</a><br />
+
+    <a href="classes/Hobix/WebApp/QueryString.html#M000272">inspect (Hobix::WebApp::QueryString)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000216">invert (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000057">join_as_author (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000170">join_path (Hobix::Weblog)</a><br />
+
+    <a href="classes/YAML/Omap.html#M000281">keys (YAML::Omap)</a><br />
+
+    <a href="classes/Hobix/BaseStorage.html#M000116">lastn (Hobix::BaseStorage)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000137">lib_path (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000142">link (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Page.html#M000276">link (Hobix::Page)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000183">link_format (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000143">linklist (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000078">list_action (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/API.html#M000106">list_action (Hobix::API)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000077">list_action_args (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000076">list_action_explain (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000145">load (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Config.html#M000203">load (Hobix::Config)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000194">load (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000171">load_and_validate_entry (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000050">load_patchsets (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000041">login (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000266">make_absolute_uri (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000264">make_relative_uri (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000197">maker (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/BaseStorage.html#M000120">match (Hobix::BaseStorage)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000173">method_missing (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000178">month_id (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/Config.html#M000202">new (Hobix::Config)</a><br />
+
+    <a href="classes/Hobix/API.html#M000101">new (Hobix::API)</a><br />
+
+    <a href="classes/Hobix/Page.html#M000274">new (Hobix::Page)</a><br />
+
+    <a href="classes/Hobix/BaseStorage.html#M000112">new (Hobix::BaseStorage)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000176">new (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/Facets/WikiEdit.html#M000027">new (Hobix::Facets::WikiEdit)</a><br />
+
+    <a href="classes/Hobix/WebApp/QueryString.html#M000271">new (Hobix::WebApp::QueryString)</a><br />
+
+    <a href="classes/Hobix/BixWikPlugin.html#M000201">new (Hobix::BixWikPlugin)</a><br />
+
+    <a href="classes/Hobix/API.html#M000105">new_action (Hobix::API)</a><br />
+
+    <a href="classes/Hobix/Page.html#M000277">next_link (Hobix::Page)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000185">no_implicit_tags (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/BaseFacet.html#M000122">not_found (Hobix::BaseFacet)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000259">open_resource (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000156">output_entry_map (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000155">output_map (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000136">output_path (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000150">outputs (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000174">p_publish (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000075">patch_action (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000074">patch_action_args (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000073">patch_action_explain (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000240">path_info (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000188">path_to_tags (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000081">post_action (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/API.html#M000108">post_action (Hobix::API)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000080">post_action_args (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000079">post_action_explain (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/Page.html#M000278">prev_link (Hobix::Page)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000228">print (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000229">printf (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/BaseProperties/ClassMethods.html#M000009">prop_sections (Hobix::BaseProperties::ClassMethods)</a><br />
+
+    <a href="classes/Hobix/BaseProperties/ClassMethods.html#M000008">properties (Hobix::BaseProperties::ClassMethods)</a><br />
+
+    <a href="classes/Hobix/BaseProperties.html#M000005">property_map (Hobix::BaseProperties)</a><br />
+
+    <a href="classes/Hobix/BaseFacet.html#M000123">protect (Hobix::BaseFacet)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000151">publishers (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000230">putc (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000231">puts (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000088">puts (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000040">puts (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Kernel.html#M000282">puts (Kernel)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000269">query_html_get_application_x_www_form_urlencoded (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000270">query_html_post_application_x_www_form_urlencoded (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000241">query_string (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/Page.html#M000279">reference_fields (Hobix::Page)</a><br />
+
+    <a href="classes/Hobix/Page.html#M000280">references (Hobix::Page)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000063">regen_action (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/API.html#M000104">regen_action (Hobix::API)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000062">regen_action_args (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000061">regen_action_explain (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000157">regenerate (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000211">reject (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000265">reluri (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000243">remote_addr (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000251">remove_header (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000217">replace (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000236">request_body (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000244">request_content_type (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000235">request_method (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000245">request_uri (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000154">reset_output_map (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000258">resource_path (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000158">retouch (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000186">root_tag= (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/UriStr.html#M000100">rooturi (Hobix::UriStr)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000146">save (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000043">save_config (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000239">script_name (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/API.html#M000107">search_action (Hobix::API)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000180">section_id (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000166">sections (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000168">sections_ignored (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000167">sections_sorts (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000219">select (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000261">send_not_found (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000260">send_resource (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000262">send_unauthorized (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000237">server_name (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000238">server_port (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000242">server_protocol (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000249">set_header (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000082">setup (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000148">setup (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000084">setup_blogs (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000083">setup_personal (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000268">setup_redirection (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000218">shift (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/Out/Quick.html#M000032">sidebar_erb (Hobix::Out::Quick)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000161">skel_daily (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000164">skel_entry (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/BixWik.html#M000014">skel_index (Hobix::BixWik)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000160">skel_index (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/BixWik.html#M000017">skel_list_index (Hobix::BixWik)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000162">skel_monthly (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000135">skel_path (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/BixWik.html#M000016">skel_recent_index (Hobix::BixWik)</a><br />
+
+    <a href="classes/Hobix/BixWik.html#M000015">skel_recent_index (Hobix::BixWik)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000165">skel_section (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000169">skel_tags (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000163">skel_yearly (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000187">split_implicit_tags (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/BasePlugin.html#M000110">start (Hobix::BasePlugin)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000125">start (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000149">storage (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000220">store (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000086">tabular (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000087">tabular_entries (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000190">tags (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000195">text_processor (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/BixWik/Entry.html#M000026">text_processor (Hobix::BixWik::Entry)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000196">text_processor_fields (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/BixWik/IndexEntry.html#M000022">title (Hobix::BixWik::IndexEntry)</a><br />
+
+    <a href="classes/Hobix/BixWik/Entry.html#M000024">title (Hobix::BixWik::Entry)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000222">to_a (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000223">to_hash (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/WebApp/QueryString.html#M000273">to_s (Hobix::WebApp::QueryString)</a><br />
+
+    <a href="classes/Hobix/BaseEntry.html#M000200">to_search (Hobix::BaseEntry)</a><br />
+
+    <a href="classes/Hobix/UriStr.html#M000098">to_str (Hobix::UriStr)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000192">to_yaml (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/UriStr.html#M000099">to_yaml (Hobix::UriStr)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000193">to_yaml_orig (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/BaseProperties.html#M000006">to_yaml_properties (Hobix::BaseProperties)</a><br />
+
+    <a href="classes/Hobix/Weblog.html#M000175">to_yaml_type (Hobix::Weblog)</a><br />
+
+    <a href="classes/Hobix/BixWik/IndexEntry.html#M000023">to_yaml_type (Hobix::BixWik::IndexEntry)</a><br />
+
+    <a href="classes/Hobix/BixWik/Entry.html#M000025">to_yaml_type (Hobix::BixWik::Entry)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000221">update (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000060">upgen_action (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/API.html#M000103">upgen_action (Hobix::API)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000059">upgen_action_args (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000058">upgen_action_explain (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000046">upgrade_app (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000045">upgrade_app_args (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/CommandLine.html#M000044">upgrade_app_explain (Hobix::CommandLine)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000182">url_link (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000214">values (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/DataMarsh.html#M000208">values_at (Hobix::DataMarsh)</a><br />
+
+    <a href="classes/Hobix/BixWik.html#M000020">wiki_link (Hobix::BixWik)</a><br />
+
+    <a href="classes/Hobix/BixWik.html#M000019">wiki_page (Hobix::BixWik)</a><br />
+
+    <a href="classes/Hobix/BixWik.html#M000021">wiki_word (Hobix::BixWik)</a><br />
+
+    <a href="classes/Hobix/BaseStorage.html#M000121">within (Hobix::BaseStorage)</a><br />
+
+    <a href="classes/Hobix/WebApp.html#M000232">write (Hobix::WebApp)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000191">yaml_type (Hobix::BaseContent)</a><br />
+
+    <a href="classes/Hobix/BaseContent.html#M000179">year_id (Hobix::BaseContent)</a><br />
+
+  </div>
+</div>
+</body>
+</html>
