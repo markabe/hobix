@@ -2,6 +2,7 @@ require 'rake'
 require 'rake/clean'
 require 'rake/gempackagetask'
 require 'rake/rdoctask'
+require 'grancher/task'
 require 'fileutils'
 include FileUtils
 
@@ -77,4 +78,19 @@ end
 
 task :uninstall => [:clean] do
   sh %{gem uninstall #{NAME}}
+end
+
+Grancher::Task.new do |g|
+  g.branch = 'gh-pages'
+  g.push_to = 'origin'
+  g.message = 'Updated website' # defaults to 'Updated files.'
+
+  # Put the website-directory in the root
+  g.directory 'school'
+
+  # doc -> doc
+  g.directory 'doc', 'doc'
+
+  # README -> README
+  g.file 'README', 'README.txt'
 end
