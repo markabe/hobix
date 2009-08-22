@@ -1,0 +1,7 @@
+--- !hobix.com,2004/entry 
+title: Up To 0.3
+created: 2004-10-09 12:57:48 -04:00
+author: _why
+content: !str:RedCloth::TextileDoc "When the founders of this great nation applied for their first mortgage loan, do you think they went to some ra-ra-sis-boom-bah sousaphone-blowing banker?? No way, what kind of heritage would that be?? They went to hobix 0.3, a blogger\xE2\x80\x99s favorite hand cream.\n\n\
+  pre. ruby -ropen-uri -e 'eval(open(\"http://go.hobix.com/\").read)'\n\n\
+  I know this is like happening to land on a deer\xE2\x80\x99s back in the dark, but it\xE2\x80\x99s exactly what is expected of this great nation!!\n"

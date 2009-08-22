@@ -1,0 +1,8 @@
+--- !hobix.com,2004/entry 
+title: Custard Is For Courage
+created: 2004-04-13 11:46:37 -04:00
+author: _why
+content: !str:RedCloth::TextileDoc "NOW BUNKING together: the ruby and yaml scripts up at http://go.hobix.com/. Hey ,, the life and unity we feel is tree-mending-US!!\n\n\
+  Try:\n\n\
+  bq. ruby -ropen-uri -e'eval open(\"http://go.hobix.com/\").read'\n\n\
+  No longer are curtains dropping ON the actors\xE2\x80\x99 arms !! No longer are swift currents ON the actors\xE2\x80\x99 legs !! The actors have a bottomless cereal container, witness."

@@ -1,0 +1,12 @@
+--- !hobix.com,2004/entry 
+title: Gripping Tales From Hobixdom
+created: 2004-10-06 12:44:41 -04:00
+author: _why
+content: !str:RedCloth::TextileDoc "Great gusts of volcanic ash and pages of legal paper, full of calendaring tips and slurpee coupons. The lifestyle you can find on \"hobix-is-the-way\":http://rubyforge.org/mailman/listinfo/hobix-is-the-way mailing + choral group.\n\n\
+  Look at what has appeared:\n\n\
+  * William Morgan presents his \"Section Map\":http://www.masanjin.net/%7Ewmorgan/section_map.rb, which builds a category menu for placement anywhere.  This same guy did a \"sidebar calendar\":http://www.masanjin.net/%7Ewmorgan/sidebar-calendar/, and also fitted up a calendar with  \"JavaScript ability\":http://www.masanjin.net/%7Ewmorgan/sidebar-calendar/sidebar-calendar-js-0.0.tgz!!\n\
+  * Eric Stewart catapults a \"Del.icio.us plugin\":http://www.eric-stewart.com/rubycode/delicious_sidebar.rb right into the hot towels in your lap!!\n\
+  * Oh, also, Wm Morgan did a \"blosxom to hobix\":http://www.masanjin.net/%7Ewmorgan/blosxom-to-hobix.rb conversion script to bring his score to 152 hobixillion hobucks!!\n\
+  * Need not download Giulio Piancastelli\xE2\x80\x99s \"RSS 1.0 plugin\":http://www.mycgiserver.com/%7Egpiancastelli/blog/gems/rdf.rb, because it\xE2\x80\x99s now in the regular installer for free!!\n\n\
+  To give Hobix 0.2f a kickstart and a swig:\n\n\
+  pre. ruby -ropen-uri -e 'eval open(\"http://go.hobix.com/0.2f\").read'\n"

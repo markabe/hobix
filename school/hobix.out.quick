@@ -46,7 +46,7 @@ entry: |
 
 entry_title: |
   <div class="entryTitle"><%= entry.title %></div>
-  <div class="entryDate"><nobr><%= entry.created.strftime( "%m %d %Y @ %h:%M %p" ) %></nobr></div>
+  <div class="entryDate"><nobr><%= entry.created.strftime( "%m %d %Y @ %I:%M %p" ) %></nobr></div>
 
 entry_content: |
   <div class="entryContent"><%= entry.content.to_html %></div>
