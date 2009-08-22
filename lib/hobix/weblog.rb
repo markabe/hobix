@@ -366,7 +366,9 @@ class Weblog
         tag = @entry_class =~ /^[\w:]+$/ ? @entry_class.untaint : default_entry_class unless tag
             
         found_class = nil
+        raise @@entry_classes.inspect
         if @@entry_classes
+
             found_class = @@entry_classes.find do |c|
                 tag == c.name.split( '::' ).last.downcase
             end
