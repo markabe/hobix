@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Hobix::Out::Quick [The Book of Hobix]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Hobix::Out::Quick</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+
+
+                <a href="../../../files/lib/hobix/bixwik_rb.html">
+
+                lib/hobix/bixwik.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../../../files/lib/hobix/comments_rb.html">
+
+                lib/hobix/comments.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../../../files/lib/hobix/trackbacks_rb.html">
+
+                lib/hobix/trackbacks.rb
+
+                </a>
+
+
+        <br />
+
+            </td>
+        </tr>
+
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+
+                Object
+
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+  <div id="contextContent">
+
+   </div>
+
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+
+        <a href="#M000029">banner_erb</a>&nbsp;&nbsp;
+
+        <a href="#M000034">entry_comment_erb</a>&nbsp;&nbsp;
+
+        <a href="#M000035">entry_comment_form_erb</a>&nbsp;&nbsp;
+
+        <a href="#M000031">entry_content_erb</a>&nbsp;&nbsp;
+
+        <a href="#M000033">entry_footer_erb</a>&nbsp;&nbsp;
+
+        <a href="#M000030">entry_title_erb</a>&nbsp;&nbsp;
+
+        <a href="#M000037">entry_trackback_erb</a>&nbsp;&nbsp;
+
+        <a href="#M000036">entry_trackback_rdf_erb</a>&nbsp;&nbsp;
+
+        <a href="#M000032">sidebar_erb</a>&nbsp;&nbsp;
+
+      </div>
+    </div>
+
+  </div>
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+    <!-- if method_list -->
+
+    <div id="methods">
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000029" class="method-signature">
+
+          <span class="method-name">banner_erb</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000029-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000029-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 166</span>
+166: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">banner_erb</span>; <span class="ruby-value str">%{
+167:   &lt;% page_id = page.id %&gt;
+168:   &lt;% page_id = 'HomePage' if page.id == 'index' %&gt;
+169:   &lt;% page_name = Hobix::BixWik::wiki_word( page_id ) %&gt;
+170:   &lt;div id=&quot;banner&quot;&gt;
+171:     &lt;% if page_id == &quot;HomePage&quot; %&gt;
+172:       &lt;h1 id=&quot;title&quot;&gt;&lt;%= weblog.title %&gt;&lt;/h1&gt;
+173:       &lt;% if weblog.tagline %&gt;&lt;div id=&quot;tagline&quot;&gt;&lt;%= weblog.tagline %&gt;&lt;/div&gt;&lt;% end %&gt;
+174:     &lt;% else %&gt;
+175:       &lt;div id=&quot;title&quot;&gt;&lt;%= weblog.title %&gt;&lt;/div&gt;
+176:       &lt;h1 id=&quot;pageName&quot;&gt;&lt;%= page_name %&gt;&lt;/h1&gt;
+177:     &lt;% end %&gt;
+178:     &lt;form id=&quot;navigationForm&quot; class=&quot;navigation&quot; action=&quot;&lt;%= weblog.expand_path( 'search' ) %&gt;&quot; action=&quot;get&quot; style=&quot;font-size: 10px&quot;&gt;  
+179:     &lt;% Hobix::BixWik::QUICK_MENU.each do |menu_link, attr| %&gt;
+180:       &lt;% if page_id == menu_link %&gt;
+181:         &lt;%= attr[0] %&gt;
+182:       &lt;% else %&gt;
+183:       &lt;a href=&quot;&lt;%= weblog.abs_link( menu_link ) %&gt;&quot; title=&quot;&lt;% if attr[1] %&gt;[&lt;%= attr[1] %&gt;] &lt;% end %&gt;&lt;%= attr[2] %&gt;&quot; 
+184:            accesskey=&quot;&lt;%= attr[1] %&gt;&quot;&gt;&lt;%= attr[0] %&gt;&lt;/a&gt;
+185:       &lt;% end %&gt; |
+186:     &lt;% end %&gt;
+187:     &lt;input type=&quot;text&quot; id=&quot;searchField&quot; name=&quot;query&quot; style=&quot;font-size: 10px&quot; value=&quot;Search&quot; onClick=&quot;this.value == 'Search' ? this.value = '' : true&quot;&gt;
+188:     &lt;/form&gt;
+189:   &lt;/div&gt; }</span>
+190: <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000034" class="method-detail">
+        <a name="M000034"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000034" class="method-signature">
+
+          <span class="method-name">entry_comment_erb</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000034-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000034-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/hobix/comments.rb, line 46</span>
+46: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">entry_comment_erb</span>; <span class="ruby-value str">%{
+47:   &lt;% entry_id = entry.id %&gt;
+48:   &lt;div id=&quot;comments&quot;&gt;
+49:   &lt;% comments = weblog.storage.load_attached( entry_id, &quot;comments&quot; ) rescue [] %&gt;
+50:   &lt;% comments.each do |comment| %&gt;
+51:   &lt;div class=&quot;entry&quot;&gt;
+52:       &lt;div class=&quot;entryAttrib&quot;&gt;
+53:           &lt;div class=&quot;entryAuthor&quot;&gt;&lt;h3&gt;&lt;%= comment.author %&gt;&lt;/h3&gt;&lt;/div&gt;
+54:           &lt;div class=&quot;entryTime&quot;&gt;said on &lt;%= comment.created.strftime( &quot;&lt;nobr&gt;%d %b %Y&lt;/nobr&gt; at &lt;nobr&gt;%H:%M&lt;/nobr&gt;&quot; ) %&gt;&lt;/div&gt;
+55:       &lt;/div&gt;
+56:       &lt;div class=&quot;entryContentOuter&quot;&gt;&lt;div class=&quot;entryContent&quot;&gt;&lt;%= comment.content.to_html %&gt;&lt;/div&gt;&lt;/div&gt;
+57:   &lt;/div&gt;
+58:   &lt;% end %&gt;
+59: }</span> <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000035" class="method-signature">
+
+          <span class="method-name">entry_comment_form_erb</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000035-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/hobix/comments.rb, line 61</span>
+61: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">entry_comment_form_erb</span>; <span class="ruby-value str">%{
+62:   &lt;div class=&quot;entry&quot;&gt;
+63:   &lt;form id=&quot;userComment&quot; method=&quot;post&quot; action=&quot;&lt;%= weblog.expand_path( '/control/comment/' + entry_id )%&gt;&quot;&gt;
+64:     &lt;div class=&quot;entryAttrib&quot;&gt;
+65:        &lt;div class=&quot;entryAuthor&quot;&gt;&lt;input name=&quot;&lt;%= Hobix::Facets::Comments.form_field 'author' %&gt;&quot; type=&quot;textbox&quot; size=&quot;15&quot; maxlength=&quot;50&quot; /&gt;&lt;/div&gt;
+66:        &lt;div id=&quot;liveTime&quot; class=&quot;entryTime&quot;&gt;said on &lt;%= Time.now.strftime( &quot;&lt;nobr&gt;%d %b %Y&lt;/nobr&gt; at &lt;nobr&gt;%H:%M&lt;/nobr&gt;&quot;)%&gt;&lt;/div&gt;
+67:     &lt;/div&gt;
+68:     &lt;div class=&quot;entryContentOuter&quot;&gt;&lt;div class=&quot;entryContent&quot;&gt;
+69:        &lt;textarea name=&quot;&lt;%= Hobix::Facets::Comments.form_field 'content' %&gt;&quot; rows=&quot;6&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;
+70:        &lt;p&gt;&lt;input type=&quot;button&quot; name=&quot;pleasePreview&quot; value=&quot;preview&quot; 
+71:            onClick=&quot;new Ajax.Request( '&lt;%= weblog.expand_path '/control/preview' %&gt;', {parameters: Form.serialize('userComment'), onComplete: function(req) { $('textilePreview').innerHTML = req.responseText }})&quot; /&gt;
+72:           &lt;input type=&quot;submit&quot; name=&quot;&lt;%= Hobix::Facets::Comments.form_field 'submit' %&gt;&quot; value=&quot;&amp;gt;&amp;gt;&quot; /&gt;
+73:           &lt;small&gt;* do &lt;a href=&quot;javascript:quickRedReference();&quot;&gt;fancy stuff&lt;/a&gt; in your comment.&lt;/small&gt;
+74:        &lt;/p&gt;
+75:        &lt;div id=&quot;textileWrap&quot;&gt;&lt;!-- &lt;h4&gt;PREVIEW PANE&lt;/h4&gt; --&gt;
+76:        &lt;div id=&quot;textilePreview&quot;&gt;&lt;/div&gt;
+77:        &lt;/div&gt;
+78:        &lt;/div&gt;
+79:     &lt;/div&gt;&lt;/div&gt;
+80:      
+81:   &lt;/form&gt;
+82:   &lt;/div&gt;
+83: }</span> <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000031" class="method-detail">
+        <a name="M000031"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000031" class="method-signature">
+
+          <span class="method-name">entry_content_erb</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000031-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000031-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 192</span>
+192: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">entry_content_erb</span>
+193:     <span class="ruby-value str">%{ &lt;div class=&quot;entryContent&quot;&gt;&lt;%= weblog.wiki_page( entry.content.to_html ) %&gt;&lt;/div&gt; }</span>
+194: <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000033" class="method-detail">
+        <a name="M000033"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000033" class="method-signature">
+
+          <span class="method-name">entry_footer_erb</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000033-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000033-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 196</span>
+196: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">entry_footer_erb</span>; <span class="ruby-value str">%{
+197:   Revision from &lt;%= ( entry.modified || entry.created ).strftime( &quot;%d %B %Y at %H:%M&quot; ) %&gt; by &lt;%= weblog.wiki_link( &quot;authors/&quot; + entry.author ) %&gt; }</span>
+198: <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000030" class="method-detail">
+        <a name="M000030"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000030" class="method-signature">
+
+          <span class="method-name">entry_title_erb</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000030-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000030-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 191</span>
+191: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">entry_title_erb</span>; <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000037" class="method-signature">
+
+          <span class="method-name">entry_trackback_erb</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000037-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/hobix/trackbacks.rb, line 38</span>
+38:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">entry_trackback_erb</span>; <span class="ruby-value str">%{
+39:     &lt;div id=&quot;trackbacks&quot;&gt;
+40:     &lt;% entry_id = entry.id %&gt;
+41:     &lt;% trackbacks = weblog.storage.load_attached( entry_id, &quot;trackbacks&quot;) rescue [] %&gt;
+42:     &lt;% trackbacks.each do |trackback| %&gt;
+43:     &lt;div class=&quot;entry&quot;&gt;
+44:         &lt;div class=&quot;entryAttrib&quot;&gt;
+45:             &lt;div class=&quot;entryAuthor&quot;&gt;&lt;h3&gt;&lt;%= trackback.blog_name %&gt;&lt;/h3&gt;&lt;/div&gt;
+46:             &lt;div class=&quot;entryTime&quot;&gt;tracked back on &lt;%= trackback.created.strftime(&quot;&lt;nobr&gt;%d %b %Y&lt;/nobr&gt; at &lt;nobr&gt;%H:%M&lt;/nobr&gt;&quot; ) %&gt;&lt;/div&gt;
+47:         &lt;/div&gt;
+48:         &lt;div class=&quot;entryContentOuter&quot;&gt;&lt;div class=&quot;entryContent&quot;&gt;
+49:             &lt;h3&gt;&lt;a href=&quot;&lt;%= trackback.url %&gt;&quot;&gt;&lt;%= trackback.title %&gt;&lt;/a&gt;&lt;/h3&gt;
+50:             &lt;%= trackback.excerpt %&gt;
+51:         &lt;/div&gt;&lt;/div&gt;
+52:     &lt;/div&gt;
+53:     &lt;% end %&gt;
+54:     &lt;/div&gt;
+55:   }</span> <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000036" class="method-signature">
+
+          <span class="method-name">entry_trackback_rdf_erb</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000036-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/hobix/trackbacks.rb, line 28</span>
+28:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">entry_trackback_rdf_erb</span>; <span class="ruby-value str">%{
+29:     &lt;!--
+30:     &lt;%= trackback_rdf_for( weblog, entry ) %&gt;
+31:     --&gt;
+32:   }</span> <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000032" class="method-detail">
+        <a name="M000032"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000032" class="method-signature">
+
+          <span class="method-name">sidebar_erb</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000032-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000032-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/hobix/bixwik.rb, line 195</span>
+195: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sidebar_erb</span>; <span class="ruby-keyword kw">nil</span>; <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+  </div>
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

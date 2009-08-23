@@ -1,0 +1,758 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Hobix [The Book of Hobix]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Hobix</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+
+
+                <a href="../files/lib/hobix_rb.html">
+
+                lib/hobix.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/api_rb.html">
+
+                lib/hobix/api.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/article_rb.html">
+
+                lib/hobix/article.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/base_rb.html">
+
+                lib/hobix/base.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/bixwik_rb.html">
+
+                lib/hobix/bixwik.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/commandline_rb.html">
+
+                lib/hobix/commandline.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/comments_rb.html">
+
+                lib/hobix/comments.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/config_rb.html">
+
+                lib/hobix/config.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/datamarsh_rb.html">
+
+                lib/hobix/datamarsh.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/entry_rb.html">
+
+                lib/hobix/entry.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/linklist_rb.html">
+
+                lib/hobix/linklist.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/trackbacks_rb.html">
+
+                lib/hobix/trackbacks.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/webapp_rb.html">
+
+                lib/hobix/webapp.rb
+
+                </a>
+
+
+        <br />
+
+
+                <a href="../files/lib/hobix/weblog_rb.html">
+
+                lib/hobix/weblog.rb
+
+                </a>
+
+
+        <br />
+
+            </td>
+        </tr>
+
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1><a href="Hobix.html">Hobix</a></h1>
+<p>
+<a href="Hobix.html">Hobix</a> is a complete blogging system, designed to
+be managed on the file system and accessed through a command-line
+application.
+</p>
+<p>
+The command-line application is powered by this Ruby library which is
+designed to be fully scriptable and extensible.
+</p>
+<h1>Module Map</h1>
+<p>
+Here is a map of the core modules which are loaded when you require
+&#8216;hobix&#8217; in your script.
+</p>
+<table>
+<tr><td valign="top">Hobix::Weblog:</td><td>Generally, this module is the starting point. Load a weblog&#8217;s
+configuration into a <a href="Hobix/Weblog.html">Hobix::Weblog</a> object,
+which can be used to query entries, generate pages, and edit any part of
+the site. (from &#8216;hobix/weblog&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::Page:</td><td>Whenever a template is generated into output, a <a
+href="Hobix/Page.html">Page</a> object is passed in, describing the links
+to neighboring pages and update time. (from &#8216;hobix/weblog&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::Entry:</td><td>Using an entry&#8217;s id (or shortName), you can load <a
+href="Hobix/Entry.html">Entry</a> objects, which contain all the content
+and rendering details for an entry. (from &#8216;hobix/entry&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::EntryEnum:</td><td>When <a href="Hobix.html">Hobix</a> supplies a template with a list of
+entry classes, this module is mixed in. (from &#8216;hobix/entry&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::LinkList:</td><td>An <a href="Hobix/Entry.html">Entry</a> subclass, used for storing links.
+(from &#8216;hobix/linklist&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::BasePlugin:</td><td>All <a href="Hobix.html">Hobix</a> plugins inherit from this class. The
+class uses Ruby&#8217;s <tt>inherited</tt> hook to identify plugins. (from
+&#8216;hobix/base&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::BaseStorage:</td><td>All storage plugins inherit from this class. Storage plugins exclusively
+store the weblog entries. (from &#8216;hobix/base&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::BaseOutput:</td><td>All output plugins inherit from this class. Output plugins are attached to
+specific template types and they feed entries into the template. (from
+&#8216;hobix/base&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::BasePublish:</td><td>All publisher plugins inherit from this class. Publisher plugins are
+notified when certain pages are updated. For example, the <tt>ping</tt>
+plugin will ping blog directories if the `index&#8217; pages are updated.
+(from &#8216;hobix/base&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::Config:</td><td>Users individually store their personal settings and weblog paths in
+.hobixrc. This class is used to load and manipulate the settings file.
+(from &#8216;hobix/config&#8217;)
+
+</td></tr>
+</table>
+<p>
+<a href="Hobix.html">Hobix</a> comes with a few plugins, for which
+documentation is also available.
+</p>
+<table>
+<tr><td valign="top">Hobix::Storage::Filesys:</td><td>This plugin stores entries in separate <a href="YAML.html">YAML</a> files.
+Directories can be used to categorize and organize entries. (from
+&#8216;hobix/storage/filesys&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::Out::ERB:</td><td>This output plugin handles .erb templates. <a
+href="Hobix/Page.html">Page</a> and entry data are passed in as variables.
+ERuby markup is used in the document to script against those variables.
+(from &#8216;hobix/out/erb&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::Out::RedRum:</td><td>This output plugin handles .redrum templates. These templates contain ERuby
+as well. The output generated by the page is passed through RedCloth, a
+Textile processor. This way, you can write your templates in Textile with
+ERuby scripting. (from &#8216;hobix/out/redrum&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::Out::RSS:</td><td>This output plugin handles .rss templates. These templates are empty and
+simply signify to the plugin that an RSS 2.0 feed should be generated for
+the entry data. (from &#8216;hobix/out/rss&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::Out::Atom:</td><td>This output plugin handles .atom templates. Just like the RSS plugin, but
+generates an Atom feed. (from &#8216;hobix/out/atom&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::Out::OkayNews:</td><td>This output plugin handles .okaynews templates. Just like the Atom and RSS
+plugins, but generates !okay/news, a <a href="YAML.html">YAML</a>
+syndication feed. (from &#8216;hobix/out/okaynews&#8217;)
+
+</td></tr>
+<tr><td valign="top">Hobix::Publish::Ping:</td><td>This publisher plugin pings blog directories when the &#8216;index&#8217;
+pages are published on a regen or upgen.
+
+</td></tr>
+</table>
+<h1>Examples</h1>
+<p>
+Here are a few short examples to give you a feel for how <a
+href="Hobix.html">Hobix</a> can be scripted. Refer to individual
+module&#8217;s documentation for more.
+</p>
+<h2>Example 1: Regenerating a weblog</h2>
+<p>
+The first step is to load the <a href="Hobix/Weblog.html">Weblog</a>
+object.
+</p>
+<pre>
+  require 'hobix'
+  weblog = Hobix::Weblog.load( '/my/blahhg/hobix.yaml' )
+</pre>
+<p>
+With the weblog loaded, we&#8217;ll now want to load a template. Templates
+are stored in the weblog&#8217;s <tt>skel_path</tt> accessor.
+</p>
+<pre>
+  tpl_path = File.join( weblog.skel_path, 'index.html.erb' )
+</pre>
+<p>
+We give the path to the editor. When we are done editing, the editor saves
+to the original path. We can then trigger a rebuild.
+</p>
+<pre>
+  weblog.regenerate :update
+</pre>
+<p>
+The :update indicates that not every file will be regenerated, only those
+affected by the change.
+</p>
+<h2>Example 2: E-mail notify on publish</h2>
+<p>
+Publisher plugins are used to perform actions when the site has an upgen or
+regen. <a href="Hobix.html">Hobix</a> plugins are absolutely the simplest
+Ruby coding ever. Watch.
+</p>
+<pre>
+  require 'net/smtp'
+
+  module Hobix::Publish
+  class Email &lt; Hobix::BasePublish
+    def initialize( weblog, emails ); end
+    def watch; ['entry']; end
+    def publish( page_name ); end
+  end
+  end
+</pre>
+<p>
+This plugin doesn&#8217;t do anything yet. But it won&#8217;t throw any
+errors. This is our skeleton for a plugin that will e-mail us when there
+are updates to the site.
+</p>
+<p>
+The <tt>watch</tt> method monitors certain page prefixes. The `entry&#8217;
+prefix indicates that this publish plugin looks for changes to any entry on
+the site.
+</p>
+<p>
+The <tt>initialize</tt> method is important as well. It receives the
++Hobix::Weblog+ object the publishing took place on. The <em>emails</em>
+parameter is supplied a list of e-mail address from the weblog&#8217;s
+hobix.yaml configuration.
+</p>
+<p>
+When a plugin is initialized it is given the weblog object and any data
+which is supplied in the weblog configuration. Here is what the hobix.yaml
+looks like:
+</p>
+<pre>
+  requires:
+    - hobix/storage/filesys
+    - hobix/out/erb
+    - hobix/publish/ping: [http://ping.blo.gs:80/]
+</pre>
+<p>
+In the above configuration, an Array is passed to the Ping plugin. So
+that&#8217;s what we&#8217;ll receive here.
+</p>
+<p>
+To get our e-mail sending, let&#8217;s fill in the <tt>initialize</tt> and
+<tt>publish</tt> methods.
+</p>
+<pre>
+  def initialize( weblog, emails )
+    @weblog = weblog
+    @emails = emails
+  end
+  def publish( page_name )
+    Net::SMTP.start( 'localhost', 25 ) do |smtp|
+      @emails.each do |email|
+        smtp.send_message &lt;&lt;MSG, 'your@site.com', email
+  From: your@site.com
+  To: #{ email }
+
+  The site has been updated.
+  MSG
+      end
+    end
+  end
+</pre>
+<hr size="1"></hr><h1>hobix/api.rb</h1>
+<p>
+<a href="Hobix.html">Hobix</a> <a href="Hobix/API.html">API</a>, used by
+any external service (DRb or REST, etc.)
+</p>
+<p>
+Copyright &#169; 2003-2004 why the lucky stiff
+</p>
+<p>
+Written &amp; maintained by why the lucky stiff <why@ruby-lang.org>
+</p>
+<p>
+This program is free software, released under a BSD license. See <a
+href="../files/COPYING.html">COPYING</a> for details.
+</p>
+<hr size="1"></hr><p>
+Marshal + DBM = <a href="Hobix/DataMarsh.html">DataMarsh</a>
+</p>
+<ul>
+<li>Same interface as DBM class
+
+</li>
+</ul>
+<hr size="1"></hr><h1>hobix/entry.rb</h1>
+<p>
+<a href="Hobix.html">Hobix</a> command-line weblog system.
+</p>
+<p>
+Copyright &#169; 2003-2004 why the lucky stiff
+</p>
+<p>
+Written &amp; maintained by why the lucky stiff <why@ruby-lang.org>
+</p>
+<p>
+This program is free software, released under a BSD license. See <a
+href="../files/COPYING.html">COPYING</a> for details.
+</p>
+<hr size="1"></hr><p>
+The <a href="Hobix/LinkList.html">LinkList</a> class is an entry type for
+storing links. It&#8217;s also a good example of how to subclass the <a
+href="Hobix/Entry.html">Entry</a> class so you can store your own kinds of
+entries.
+</p>
+<h2>Properties</h2>
+<p>
+The <a href="Hobix/LinkList.html">LinkList</a> responds to many of the same
+properties listed in the +Hobix::Entry+ class. The primary difference is
+that, instead of having a <tt>content</tt> property, there is a
+<tt>links</tt> property.
+</p>
+<table>
+<tr><td valign="top">links:</td><td>Internally, this class stores a +YAML::Omap+, an Array of pairs. The links
+are kept in the order shown in the <a href="YAML.html">YAML</a> file. They
+consist of a link title, paired with a URL.
+
+</td></tr>
+</table>
+<h2>Sample <a href="Hobix/LinkList.html">LinkList</a></h2>
+<pre>
+   --- %YAML:1.0 !hobix.com,2004/linklist
+   title: Hobix Links
+   author: why
+   created: 2004-05-30 18:53:00 -06:00
+   links:
+   - Hobix: http://hobix.com/
+   - Learn Hobix: http://hobix.com/learn/
+   - Textile Reference: http://hobix.com/textile/
+</pre>
+
+    </div>
+
+   </div>
+
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+
+        <a href="#M000003">WebApp</a>&nbsp;&nbsp;
+
+        <a href="#M000002">const_find</a>&nbsp;&nbsp;
+
+      </div>
+    </div>
+
+  </div>
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="Hobix/BaseProperties.html" class="link">Hobix::BaseProperties</a><br />
+Module <a href="Hobix/BixWik.html" class="link">Hobix::BixWik</a><br />
+Module <a href="Hobix/CommandLine.html" class="link">Hobix::CommandLine</a><br />
+Module <a href="Hobix/EntryEnum.html" class="link">Hobix::EntryEnum</a><br />
+Module <a href="Hobix/Enumerable.html" class="link">Hobix::Enumerable</a><br />
+Module <a href="Hobix/Facets.html" class="link">Hobix::Facets</a><br />
+Module <a href="Hobix/Out.html" class="link">Hobix::Out</a><br />
+Module <a href="Hobix/UriStr.html" class="link">Hobix::UriStr</a><br />
+Class <a href="Hobix/API.html" class="link">Hobix::API</a><br />
+Class <a href="Hobix/Article.html" class="link">Hobix::Article</a><br />
+Class <a href="Hobix/BaseContent.html" class="link">Hobix::BaseContent</a><br />
+Class <a href="Hobix/BaseEntry.html" class="link">Hobix::BaseEntry</a><br />
+Class <a href="Hobix/BaseFacet.html" class="link">Hobix::BaseFacet</a><br />
+Class <a href="Hobix/BaseOutput.html" class="link">Hobix::BaseOutput</a><br />
+Class <a href="Hobix/BasePlugin.html" class="link">Hobix::BasePlugin</a><br />
+Class <a href="Hobix/BasePublish.html" class="link">Hobix::BasePublish</a><br />
+Class <a href="Hobix/BaseStorage.html" class="link">Hobix::BaseStorage</a><br />
+Class <a href="Hobix/BixWikPlugin.html" class="link">Hobix::BixWikPlugin</a><br />
+Class <a href="Hobix/Comment.html" class="link">Hobix::Comment</a><br />
+Class <a href="Hobix/Config.html" class="link">Hobix::Config</a><br />
+Class <a href="Hobix/DataMarsh.html" class="link">Hobix::DataMarsh</a><br />
+Class <a href="Hobix/Entry.html" class="link">Hobix::Entry</a><br />
+Class <a href="Hobix/LinkList.html" class="link">Hobix::LinkList</a><br />
+Class <a href="Hobix/Page.html" class="link">Hobix::Page</a><br />
+Class <a href="Hobix/Trackback.html" class="link">Hobix::Trackback</a><br />
+Class <a href="Hobix/WebApp.html" class="link">Hobix::WebApp</a><br />
+Class <a href="Hobix/Weblog.html" class="link">Hobix::Weblog</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">'0.5'</td>
+
+          <td>&nbsp;</td>
+          <td class="context-item-desc">
+Version used to compare installations
+
+</td>
+
+        </tr>
+
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CVS_ID</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;$Id$&quot;</td>
+
+          <td>&nbsp;</td>
+          <td class="context-item-desc">
+CVS information
+
+</td>
+
+        </tr>
+
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">CVS_REV</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;$Revision$&quot;[11..-3]</td>
+
+        </tr>
+
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SHARE_PATH</td>
+          <td>=</td>
+          <td class="context-item-value">share_path</td>
+
+        </tr>
+
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SHARE_PATH</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;#{ ::Config::CONFIG['datadir'] }/hobix/&quot;</td>
+
+        </tr>
+
+        </table>
+      </div>
+    </div>
+
+
+
+
+    <!-- if method_list -->
+
+    <div id="methods">
+
+      <h3 class="section-bar">Public Class methods</h3>
+
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000003" class="method-signature">
+
+          <span class="method-name">WebApp</span><span class="method-args">() {|webapp| ...}</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+<a href="Hobix.html#M000003">WebApp</a> is a main routine of web
+application. It should be called from a toplevel of a
+CGI/FastCGI/mod_ruby/WEBrick script.
+</p>
+<p>
+<a href="Hobix.html#M000003">WebApp</a> is used as follows.
+</p>
+<pre>
+  #!/usr/bin/env ruby
+
+  require 'webapp'
+
+  ... class/method definitions ... # run once per process.
+
+  WebApp {|webapp| # This block runs once per request.
+    ... process a request ...
+  }
+</pre>
+<p>
+<a href="Hobix.html#M000003">WebApp</a> yields with an object of the class
+<a href="Hobix.html#M000003">WebApp</a>. The object contains request and
+response.
+</p>
+<p>
+<a href="Hobix.html#M000003">WebApp</a> rise $SAFE to 1.
+</p>
+<p>
+<a href="Hobix.html#M000003">WebApp</a> catches all kind of exception
+raised in the block. If HTTP connection is made from localhost or a
+developper host, the backtrace is sent back to the browser. Otherwise, the
+backtrace is sent to stderr usually which is redirected to error.log. The
+developper hosts are specified by the environment variable
+WEBAPP_DEVELOP_HOST. It may be an IP address such as
+&#8220;111.222.333.444&#8220; or an network address such as
+&#8220;111.222.333.0/24&#8220;. (An environment variable for CGI can be set
+by SetEnv directive in Apache.)
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000003-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/hobix/webapp.rb, line 693</span>
+693: <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-constant">WebApp</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-comment cmt"># :yields: webapp</span>
+694:   <span class="ruby-identifier">$SAFE</span> = <span class="ruby-value">1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$SAFE</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span>
+695:   <span class="ruby-identifier">manager</span> = <span class="ruby-constant">WebApp</span><span class="ruby-operator">::</span><span class="ruby-constant">Manager</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">block</span>)
+696:   <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">Apache</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Apache</span>.<span class="ruby-identifier">request</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Apache</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>)
+697:     <span class="ruby-identifier">run</span> = <span class="ruby-identifier">lambda</span> { <span class="ruby-identifier">manager</span>.<span class="ruby-identifier">run_rbx</span> }
+698:   <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:webrick_load_servlet</span>]
+699:     <span class="ruby-identifier">run</span> = <span class="ruby-identifier">lambda</span> { <span class="ruby-identifier">manager</span>.<span class="ruby-identifier">run_webrick</span> }
+700:   <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:stat</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">stat</span>.<span class="ruby-identifier">socket?</span> <span class="ruby-operator">&amp;&amp;</span>
+701:         <span class="ruby-keyword kw">begin</span>
+702:           <span class="ruby-comment cmt"># getpeername(FCGI_LISTENSOCK_FILENO) causes ENOTCONN on FastCGI</span>
+703:           <span class="ruby-comment cmt"># cf. http://www.fastcgi.com/devkit/doc/fcgi-spec.html</span>
+704:           <span class="ruby-identifier">require</span> <span class="ruby-value str">'socket'</span>
+705:           <span class="ruby-identifier">sock</span> = <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">for_fd</span>(<span class="ruby-value">0</span>)
+706:           <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">getpeername</span>
+707:           <span class="ruby-keyword kw">false</span>
+708:         <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOTCONN</span>
+709:           <span class="ruby-keyword kw">true</span>
+710:         <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">SystemCallError</span>
+711:           <span class="ruby-keyword kw">false</span>
+712:         <span class="ruby-keyword kw">end</span>
+713:     <span class="ruby-identifier">run</span> = <span class="ruby-identifier">lambda</span> { <span class="ruby-identifier">manager</span>.<span class="ruby-identifier">run_fcgi</span> }
+714:   <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value str">'REQUEST_METHOD'</span>)
+715:     <span class="ruby-identifier">run</span> = <span class="ruby-identifier">lambda</span> { <span class="ruby-identifier">manager</span>.<span class="ruby-identifier">run_cgi</span> }
+716:   <span class="ruby-keyword kw">else</span>
+717:     <span class="ruby-identifier">require</span> <span class="ruby-value str">'hobix/webapp/cli'</span>
+718:     <span class="ruby-identifier">run</span> = <span class="ruby-identifier">lambda</span> { <span class="ruby-identifier">manager</span>.<span class="ruby-identifier">run_cli</span> }
+719:   <span class="ruby-keyword kw">end</span>
+720:   <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:webapp_delay</span>]
+721:     <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>[<span class="ruby-identifier">:webapp_proc</span>] = <span class="ruby-identifier">run</span>
+722:   <span class="ruby-keyword kw">else</span>
+723:     <span class="ruby-identifier">run</span>.<span class="ruby-identifier">call</span>
+724:   <span class="ruby-keyword kw">end</span>
+725: <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000002" class="method-detail">
+        <a name="M000002"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000002" class="method-signature">
+
+          <span class="method-name">const_find</span><span class="method-args">( tclass )</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Get a top-level constant from a string
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000002-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000002-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/hobix.rb, line 224</span>
+224:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">const_find</span>( <span class="ruby-identifier">tclass</span> )
+225:         <span class="ruby-identifier">obj_class</span> = <span class="ruby-constant">Object</span>
+226:         <span class="ruby-identifier">tclass</span>.<span class="ruby-identifier">split</span>( <span class="ruby-value str">&quot;::&quot;</span> ).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">obj_class</span> = <span class="ruby-identifier">obj_class</span>.<span class="ruby-identifier">const_get</span>( <span class="ruby-identifier">c</span> ) }
+227:         <span class="ruby-identifier">obj_class</span>
+228:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+  </div>
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

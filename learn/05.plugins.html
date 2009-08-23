@@ -1,0 +1,105 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+    <title>hobix&amp;you!! &gt; Plugins</title>
+    <style type="text/css">
+    @import "/hobix/hobix.css";
+    </style>
+</head><body style="margin: 0px; padding: 0px;" background="05.plugins_files/back01.jpg">
+
+<div align="center">
+<div id="A" align="left"> 
+    <div id="B">
+        
+        <div class="learnTitle">
+        <div class="entryTitle">&nbsp;</div>
+        <div class="entryDate">&nbsp;</div>
+        </div>
+        <div class="learnLinks">
+        
+        &lt; <a href="/hobix/learn/04.makingo">last</a>
+        
+        
+        
+        </div>
+        <div class="learnBody">
+        <h1>Plugins</h1>
+        <p>Plugins
+are still basically in utter disarray. Naw, they&#8217;re not bad. But I&#8217;m
+not going to detail too much yet. I&#8217;ll give you a taste of the output
+plugins and that&#8217;s it.</p>
+
+
+	<h2>Output Plugins, You Down?</h2>
+
+
+	<p>An output plugin allow you to add new template types.  Hobix comes with output plugins for <span class="caps">ERB</span>, RSS and !okay/news.  But you can easily hack in your own types of templates.</p>
+
+
+	<p>We&#8217;ll look at the default <span class="caps">RSS</span> plugin as an example.</p>
+
+
+	<p>Each output plugin is a class.  A basic output class looks like:</p>
+
+
+<pre>  module Hobix
+  module Out
+      class RSS &lt; Hobix::BaseOutput
+          def initialize( weblog ); end
+          def extension; "rss"; end
+          def load( template_path, vars ); end
+      end
+  end
+  end
+</pre>
+
+	<p>So here&#8217;s the rules: all output plugins&#8230;</p>
+
+
+	<ol>
+	<li>are derived from the <code>Hobix::BaseOutput</code> class.</li>
+		<li>belong in the <code>Hobix::Out</code> module.</li>
+		<li>have an <code>initialize</code> method, which receives a <code>Hobix::Weblog</code> object of the current weblahhg.</li>
+		<li>have an <code>extension</code> property, which speaks the letters of the extension to watch for.</li>
+		<li>have a <code>load</code> method, which supplies the full path of the template file and a Hash containing the <strong>weblog</strong>, <strong>page</strong> and <strong>entries</strong> vars for this page. The <code>load</code> method must process the template and return a string with the new file to create.</li>
+	</ol>
+
+
+	<p>To load plugins for a websiihtt, add the library path the the <code>requires</code> list in your the blahhhg&#8217;s <code>hobix.yaml</code>.</p>
+        </div>
+        <div class="learnLinks">
+        
+        </div>
+        <br><br>
+
+    </div>
+    <div id="C">
+        <img src="05.plugins_files/spacer.html" width="114" height="1"><br>
+        <div align="right">
+        <a href="/hobix/">home</a><br>
+        <h2><strong>about</strong></h2>
+
+
+<strong>	</strong><p><strong><a href="/hobix/about/01.whatis.html">what is??</a><br><a href="/hobix/about/02.cani.html">can i??</a></strong></p>
+
+
+<strong>	</strong><h2><strong></strong>learn</h2>
+
+
+	<p><a href="/hobix/learn/01.checklist.html">checklist</a><br><a href="/hobix/learn/02.setup.html">set it up</a><br><a href="/hobix/learn/03.newblah.html">new weblahh</a><br><a href="/hobix/learn/04.makingo.html">makin it go</a><br><a href="/hobix/learn/05.plugins.html">plugins</a></p>
+
+
+	<h2><strong>based<br></strong>on</h2>
+
+
+	<p><a href="http://poignantguide.net/ruby/">ruby</a><br><a href="http://yaml.kwiki.org/?YamlInFiveMinutes">yaml</a><br><a href="/hobix/textile/">textile</a></p>
+        <p></p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <small>sluuuishy design by <a href="http://soccerriot.com/phonequail/">pq+mt</a>.</small>
+    </div>
+</div>
+</div>
+
+</div></body></html>
